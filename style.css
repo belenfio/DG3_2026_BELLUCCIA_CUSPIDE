@@ -1,0 +1,214 @@
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: #f0ede8;
+    font-family: 'Barlow', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+.memberships-section {
+    width: 100%;
+    max-width: 1200px;
+    padding: 60px 20px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ── Título ── */
+.title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(5rem, 14vw, 10rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 0.86;
+    letter-spacing: -3px;
+    color: #111;
+    margin-bottom: 70px;
+    user-select: none;
+}
+
+/* ══════════════════════════════
+   DESKTOP — abanico
+══════════════════════════════ */
+.fan-container {
+    position: relative;
+    width: 100%;
+    height: 560px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    perspective: 1400px;
+}
+
+.card {
+    position: absolute;
+    width: 280px;
+    height: 430px;
+    border-radius: 22px;
+    cursor: pointer;
+    transform-origin: bottom center;
+    will-change: transform;
+    transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 22px;
+    padding: 30px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+}
+
+/* ── Colores ── */
+.card-teal        { background: #1e3a35; }
+.card-teal        .card-inner { color: #7ec8b0; }
+.card-teal        .card-btn   { background: #7ec8b0; color: #1e3a35; }
+.card-teal        .card-icon svg { color: #7ec8b0; }
+
+.card-brown       { background: #3b2c18; }
+.card-brown       .card-inner { color: #d4a85a; }
+.card-brown       .card-btn   { background: #d4a85a; color: #3b2c18; }
+.card-brown       .card-icon svg { color: #d4a85a; }
+
+.card-lavender    { background: #c8a8e0; }
+.card-lavender    .card-inner { color: #1a0d2e; }
+.card-lavender    .card-btn   { background: #1a0d2e; color: #fff; }
+.card-lavender    .card-icon svg { color: #1a0d2e; }
+
+.card-dark-purple { background: #2a1940; }
+.card-dark-purple .card-inner { color: #b090d8; }
+.card-dark-purple .card-btn   { background: #b090d8; color: #2a1940; }
+.card-dark-purple .card-icon svg { color: #b090d8; }
+
+.card-brown2      { background: #3b2c18; }
+.card-brown2      .card-inner { color: #e8c87a; }
+.card-brown2      .card-btn   { background: #e8c87a; color: #3b2c18; }
+.card-brown2      .card-icon svg { color: #e8c87a; }
+
+/* ── Contenido ── */
+.card-icon { height: 80px; display: flex; align-items: flex-start; }
+.card-icon svg { width: 52px; height: 76px; }
+
+.card-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.card-price  { font-size: 0.95rem; font-weight: 500; opacity: 0.72; margin-top: -4px; }
+.card-desc   { font-size: 0.82rem; line-height: 1.5; opacity: 0.78; margin-top: 2px; }
+
+.card-features { list-style: none; margin-top: 4px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.card-features li { font-size: 0.8rem; line-height: 1.4; padding-left: 16px; position: relative; opacity: 0.88; }
+.card-features li::before { content: '◆'; position: absolute; left: 0; font-size: 0.42rem; top: 4px; opacity: 0.6; }
+
+.card-btn {
+    margin-top: auto;
+    padding: 12px 0;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    transition: opacity 0.2s, transform 0.15s;
+}
+.card-btn:hover  { opacity: 0.82; transform: scale(0.98); }
+.card-btn:active { transform: scale(0.95); }
+
+.card.is-center { box-shadow: 0 32px 64px rgba(0,0,0,0.28); }
+
+/* ── Nav dots ── */
+.nav-dots { display: flex; gap: 10px; margin-top: 40px; }
+.dot { width: 9px; height: 9px; border-radius: 50%; background: #bbb; cursor: pointer; transition: background 0.3s, transform 0.3s; }
+.dot.active { background: #111; transform: scale(1.3); }
+
+
+/* ══════════════════════════════════════════
+   MOBILE — stack vertical centrado
+══════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+    body { align-items: flex-start; background: #f0ede8; }
+
+    .memberships-section { padding: 0 0 60px; }
+
+    .title {
+        font-size: clamp(3rem, 18vw, 5.5rem);
+        letter-spacing: -1px;
+        margin-bottom: 0;
+        padding: 40px 20px 20px;
+        line-height: 0.88;
+    }
+
+    /* Contenedor mobile: stack centrado */
+    .fan-container {
+        position: relative;
+        width: 100%;
+        height: 580px;
+        perspective: 1000px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: visible;
+    }
+
+    /* Cards en mobile: centradas y apiladas verticalmente */
+    .card {
+        position: absolute;
+        width: calc(100% - 48px);
+        max-width: 380px;
+        height: 500px;
+        border-radius: 20px;
+        transform-origin: center bottom;
+        left: 50%;
+        /* JS controla transform; esto es el fallback */
+        transform: translateX(-50%);
+    }
+
+    .card-inner {
+        padding: 28px 24px 24px;
+        gap: 12px;
+        border-radius: 20px;
+    }
+
+    .card-icon { height: 90px; }
+    .card-icon svg { width: 58px; height: 84px; }
+
+    .card-name   { font-size: 1.6rem; }
+    .card-price  { font-size: 1rem; }
+    .card-desc   { font-size: 0.88rem; }
+    .card-features li { font-size: 0.85rem; }
+
+    .card-btn {
+        padding: 16px 0;
+        font-size: 1.05rem;
+        border-radius: 12px;
+    }
+
+    .nav-dots { margin-top: 24px; gap: 12px; }
+    .dot { width: 10px; height: 10px; }
+}
+
+@media (max-width: 390px) {
+    .card { height: 470px; }
+    .card-inner { padding: 24px 20px 20px; }
+    .card-name { font-size: 1.4rem; }
+}
