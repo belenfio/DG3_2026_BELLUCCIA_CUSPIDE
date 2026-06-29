@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patagonia Lux | Expediciones al fin del mundo</title>
+    <!-- Tailwind CSS (CDN para despliegue rápido) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Lenis para Scroll Suave -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+    
+    <script>
+        // CONFIGURACIÓN DE DESIGN TOKENS
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'glacial-blue': '#A0C4D6',
+                        'sunset-orange': '#D97706',
+                        'slate-charcoal': '#1F2937'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .section-reveal { opacity: 0; transform: translateY(60px); }
+    </style>
+</head>
+<body class="bg-white text-slate-charcoal selection:bg-sunset-orange selection:text-white">
+
+    <!-- HERO -->
+    <header class="h-screen flex flex-col justify-center items-center text-center p-6">
+        <h1 class="text-6xl md:text-9xl mb-6">Patagonia</h1>
+        <p class="text-lg tracking-[0.2em] uppercase opacity-70">Expediciones de Lujo al Fin del Mundo</p>
+    </header>
+
+    <!-- PROMESA -->
+    <section class="py-32 px-6 max-w-3xl mx-auto section-reveal">
+        <h2 class="text-4xl md:text-5xl mb-8">El silencio es el verdadero lujo.</h2>
+        <p class="text-xl leading-relaxed opacity-80">Nuestras expediciones no solo recorren territorios; exploran el interior de quienes se atreven a caminar sobre glaciares milenarios.</p>
+    </section>
+
+    <!-- MAPA -->
+    <section class="h-[70vh] bg-slate-100 flex items-center justify-center section-reveal">
+        <p class="text-slate-400 italic">Interactivo: Mapa de Rutas Australes</p>
+    </section>
+
+    <!-- CAMINO DEL HÉROE -->
+    <section id="camino" class="py-32 px-6 max-w-4xl mx-auto section-reveal">
+        <div class="space-y-20">
+            <div class="flex gap-8">
+                <span class="text-sunset-orange font-bold text-2xl">01</span>
+                <div>
+                    <h3 class="text-3xl mb-2">El Llamado</h3>
+                    <p>La desconexión comienza al dejar atrás la civilización.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-32 text-center section-reveal">
+        <button class="px-12 py-4 bg-slate-charcoal text-white hover:bg-sunset-orange transition-colors duration-500">Comenzar tu viaje</button>
+    </section>
+
+    <script>
+        // Inicialización de Lenis Smooth Scroll
+        const lenis = new Lenis();
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+
+        // GSAP ScrollTrigger Global
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animación elegante de aparición
+        gsap.utils.toArray(".section-reveal").forEach((section) => {
+            gsap.to(section, {
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 85%",
+                    toggleActions: "play none none none"
+                },
+                opacity: 1,
+                y: 0,
+                duration: 1.5,
+                ease: "power4.out"
+            });
+        });
+    </script>
+</body>
+</html>
