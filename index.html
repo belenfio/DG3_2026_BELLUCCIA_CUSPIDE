@@ -1,98 +1,161 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patagonia Lux | Expediciones al fin del mundo</title>
-    <!-- Tailwind CSS (CDN para despliegue rápido) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- GSAP & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <!-- Lenis para Scroll Suave -->
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
-    
-    <script>
-        // CONFIGURACIÓN DE DESIGN TOKENS
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'glacial-blue': '#A0C4D6',
-                        'sunset-orange': '#D97706',
-                        'slate-charcoal': '#1F2937'
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        .section-reveal { opacity: 0; transform: translateY(60px); }
-    </style>
+    <title>Club Memberships</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-white text-slate-charcoal selection:bg-sunset-orange selection:text-white">
+<body>
 
-    <!-- HERO -->
-    <header class="h-screen flex flex-col justify-center items-center text-center p-6">
-        <h1 class="text-6xl md:text-9xl mb-6">Patagonia</h1>
-        <p class="text-lg tracking-[0.2em] uppercase opacity-70">Expediciones de Lujo al Fin del Mundo</p>
-    </header>
+    <section class="memberships-section">
+        <h1 class="title">CLUB<br>MEMBERSHIPS</h1>
 
-    <!-- PROMESA -->
-    <section class="py-32 px-6 max-w-3xl mx-auto section-reveal">
-        <h2 class="text-4xl md:text-5xl mb-8">El silencio es el verdadero lujo.</h2>
-        <p class="text-xl leading-relaxed opacity-80">Nuestras expediciones no solo recorren territorios; exploran el interior de quienes se atreven a caminar sobre glaciares milenarios.</p>
-    </section>
+        <div class="fan-container" id="fanContainer">
 
-    <!-- MAPA -->
-    <section class="h-[70vh] bg-slate-100 flex items-center justify-center section-reveal">
-        <p class="text-slate-400 italic">Interactivo: Mapa de Rutas Australes</p>
-    </section>
-
-    <!-- CAMINO DEL HÉROE -->
-    <section id="camino" class="py-32 px-6 max-w-4xl mx-auto section-reveal">
-        <div class="space-y-20">
-            <div class="flex gap-8">
-                <span class="text-sunset-orange font-bold text-2xl">01</span>
-                <div>
-                    <h3 class="text-3xl mb-2">El Llamado</h3>
-                    <p>La desconexión comienza al dejar atrás la civilización.</p>
+            <div class="card card-teal" data-idx="0">
+                <div class="card-inner">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="30" cy="10" r="8" fill="currentColor" opacity="0.9"/>
+                            <path d="M20 28 Q30 18 40 28 L44 55 L16 55 Z" fill="currentColor" opacity="0.85"/>
+                            <path d="M18 40 L8 60" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M42 40 L52 60" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M16 55 L10 75" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M44 55 L50 75" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-name">ATHLETE</h3>
+                        <p class="card-price">Kostenfrei</p>
+                        <p class="card-desc">Für Spitzenathleten, die über den Sport hinaus wachsen möchten.</p>
+                        <ul class="card-features">
+                            <li>Zugang zur Community</li>
+                            <li>Aufbau deiner Marke</li>
+                            <li>Chancen auf Sponsoring</li>
+                        </ul>
+                        <button class="card-btn">Join</button>
+                    </div>
                 </div>
             </div>
+
+            <div class="card card-brown" data-idx="1">
+                <div class="card-inner">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="30" cy="10" r="8" fill="currentColor" opacity="0.9"/>
+                            <path d="M14 30 Q30 22 46 30 L50 60 L10 60 Z" fill="currentColor" opacity="0.8"/>
+                            <path d="M10 60 L6 78" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M50 60 L54 78" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M22 60 L20 78" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M38 60 L40 78" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-name">BOOSTER</h3>
+                        <p class="card-price">1.020€/Jahr</p>
+                        <p class="card-desc">Für Freelancer und KMUs bis 2 Mitarbeiter.</p>
+                        <ul class="card-features">
+                            <li>Zugang zu Athleten</li>
+                            <li>Events & Workshops</li>
+                            <li>Persönliche Kontakte</li>
+                        </ul>
+                        <button class="card-btn">Join</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-lavender" data-idx="2">
+                <div class="card-inner">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="38" cy="8" r="7" fill="currentColor" opacity="0.9"/>
+                            <path d="M10 35 Q20 20 35 18 L45 30 L30 50 Z" fill="currentColor" opacity="0.85"/>
+                            <path d="M30 50 L15 70" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M40 45 L50 68" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M10 35 L2 50" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-name">BUSINESS</h3>
+                        <p class="card-price">ab 1.980€/Jahr</p>
+                        <p class="card-desc">Für Unternehmen und KMUs bis 50 Mitarbeiter.</p>
+                        <ul class="card-features">
+                            <li>Strategische Partnerschaften</li>
+                            <li>Kundenbindung & Beziehungen</li>
+                            <li>Inspiration durch Expert:innen</li>
+                        </ul>
+                        <button class="card-btn">Join</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-dark-purple" data-idx="3">
+                <div class="card-inner">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="30" cy="10" r="8" fill="currentColor" opacity="0.9"/>
+                            <path d="M18 28 L30 22 L42 28 L38 55 L22 55 Z" fill="currentColor" opacity="0.8"/>
+                            <path d="M22 55 L18 76" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M38 55 L42 76" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M14 38 L4 48" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+                            <path d="M46 38 L56 48" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-name">PREMIUM</h3>
+                        <p class="card-price">ab 4.800€/Jahr</p>
+                        <p class="card-desc">Mit der Führungskultur und exklusiven Partnern.</p>
+                        <ul class="card-features">
+                            <li>Exklusive Partnerschaften</li>
+                            <li>VIP-Zugang zu Events</li>
+                            <li>Dedicated Manager</li>
+                        </ul>
+                        <button class="card-btn">Join</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-brown2" data-idx="4">
+                <div class="card-inner">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="30" cy="9" r="8" fill="currentColor" opacity="0.9"/>
+                            <path d="M16 32 Q30 24 44 32 L48 58 L12 58 Z" fill="currentColor" opacity="0.8"/>
+                            <path d="M12 58 L8 76" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M48 58 L52 76" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M26 58 L24 76" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                            <path d="M34 58 L36 76" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                            <polygon points="30,2 33,8 40,8 34,12 37,19 30,15 23,19 26,12 20,8 27,8" fill="currentColor" opacity="0.6"/>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-name">ELITE</h3>
+                        <p class="card-price">auf Anfrage</p>
+                        <p class="card-desc">Für globale Unternehmen mit höchsten Ambitionen.</p>
+                        <ul class="card-features">
+                            <li>Co-Branding Kampagnen</li>
+                            <li>Globale Reichweite</li>
+                            <li>1:1 Strategy Sessions</li>
+                        </ul>
+                        <button class="card-btn">Join</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="nav-dots" id="navDots">
+            <span class="dot active" data-target="0"></span>
+            <span class="dot" data-target="1"></span>
+            <span class="dot" data-target="2"></span>
+            <span class="dot" data-target="3"></span>
+            <span class="dot" data-target="4"></span>
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="py-32 text-center section-reveal">
-        <button class="px-12 py-4 bg-slate-charcoal text-white hover:bg-sunset-orange transition-colors duration-500">Comenzar tu viaje</button>
-    </section>
-
-    <script>
-        // Inicialización de Lenis Smooth Scroll
-        const lenis = new Lenis();
-        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-        requestAnimationFrame(raf);
-
-        // GSAP ScrollTrigger Global
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Animación elegante de aparición
-        gsap.utils.toArray(".section-reveal").forEach((section) => {
-            gsap.to(section, {
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top 85%",
-                    toggleActions: "play none none none"
-                },
-                opacity: 1,
-                y: 0,
-                duration: 1.5,
-                ease: "power4.out"
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
